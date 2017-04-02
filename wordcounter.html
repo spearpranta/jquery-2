@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>jquery 2</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+   
+  </head>
+  <body>
+      <div class="contant">
+        
+        <div class="overlay">
+        <section class="navigation-bar">
+        <div class="container">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Spear</a>
+              </div>
+
+             
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="datepicker.html">Date Picker</a></li>
+                  <li><a href="passwordck.html">Password Checker</a></li>
+                  <li><a href="wordcounter.html">Word Counter</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>  
+        </div>
+      </section>
+    
+          <div class="weather-box txt">
+            <p>Write your objective. <span>(Maximum 100 characters)</span></p>
+            <textarea rows="10" cols="55" maxlength="100" onkeyup="Count()"></textarea>
+            <h2 id="character_remaining"></h2>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+      </div>
+
+      </div>
+
+    <script src="ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        var max_text=100;
+        $("#character_remaining").html("<b>"+max_text+" characters remaining.</b>");
+        $("textarea").keyup(function(){
+            var text_length=$("textarea").val().length;
+            var total_character_remaining=max_text - text_length;
+          $("#character_remaining").html("<b>"+total_character_remaining+" characters remaining.</b>");
+        });
+      });
+
+    
+    </script>
+  </body>
+
+</html>
